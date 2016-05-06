@@ -16,6 +16,7 @@
         @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
         @IBOutlet weak var searchControl: UISearchBar!
         @IBOutlet weak var noItemsLabel: UILabel!
+        var customActivityIndicator:Utils.AppActivityIndicator!
         
         var currentPage = 0
         var detailToShow: String?
@@ -29,14 +30,10 @@
             let gmt = NSTimeZone(abbreviation: "GMT")
             formatter.dateFormat = "EEE, MMM dd, hh:mm"
             formatter.timeZone = gmt
-        }
-        
-        override func viewWillAppear(animated: Bool) {
-            super.viewWillAppear(animated)
+            customActivityIndicator = Utils.AppActivityIndicator(showInView: view)
             
-            if LocationManager.sharedInstance.validatePermission() == .Authorized {
+            if LocationManager.sharedInstance.validatePermission() == .AuthorizationNotDetermined {
                 //To use other way to send messages between objects, I wanted to show you the notification center
-                
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SearchViewController.waitForLocationAuthorization(_:)) , name:LocationManager.locationAuthorizationChanged, object: nil)
             } else {
                 //load empty query by default
@@ -44,23 +41,27 @@
             }
         }
         
+        override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
+        }
+        
         func waitForLocationAuthorization(notification: NSNotification) {
             NSNotificationCenter.defaultCenter().removeObserver(self)
             fetchEvents("" , pageNumber:0);
         }
         
-        
         func fetchEvents(query: String, pageNumber: Int32) {
             
             if pageNumber == 0 {
-                tableView.hidden = true
-                self.noItemsLabel.hidden = true
-                self.activityIndicator.startAnimating()
+                
+                noItemsLabel.hidden = true
+                //activityIndicator.startAnimating()
+                customActivityIndicator.start()
             }
             
             EventsManager.sharedInstance.searchEvents(query, sinceDate: NSDate(), pageNumber: pageNumber) { (response, error) in
                 self.tableView.hidden = false
-                self.activityIndicator.stopAnimating()
+                self.customActivityIndicator.stop()
                 
                 if error == nil {
                     if let newEvents = response {
@@ -119,6 +120,12 @@
             
             if let date = currentEvent.date {
                 cell.eventDate.text = formatter.stringFromDate(date)
+            }
+            
+            if let imageUrl = currentEvent.imageUrl {
+                cell.eventImage.app_setImageWithURL(NSURL(string: imageUrl)!, placeholderImage: UIImage(named:"Placeholder"))
+            } else {
+                cell.eventImage.image = UIImage(named:"Placeholder")
             }
             
             loadMoreSearchItems(indexPath.row)

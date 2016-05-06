@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7C3D812A1CDD1B0D00D92C11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3D81281CDD1B0D00D92C11 /* Main.storyboard */; };
+		7C3D812C1CDD5A6700D92C11 /* Utils+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D812B1CDD5A6700D92C11 /* Utils+ActivityIndicator.swift */; };
+		7C3D812E1CDD5ADF00D92C11 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D812D1CDD5ADF00D92C11 /* UIColor+App.swift */; };
 		7CF2DF2A1CDB97340085D331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF2DF291CDB97340085D331 /* AppDelegate.swift */; };
 		7CF2DF321CDB97340085D331 /* eventbriteSearcherSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF2DF301CDB97340085D331 /* eventbriteSearcherSwift.xcdatamodeld */; };
 		7CF2DF341CDB97340085D331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF2DF331CDB97340085D331 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		5761874B894147C0F7C1B0C3 /* Pods-eventbriteSearcherSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventbriteSearcherSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventbriteSearcherSwift/Pods-eventbriteSearcherSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6CBEA0803C8E4D8E7BEC9F48 /* Pods-eventbriteSearcherSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventbriteSearcherSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventbriteSearcherSwiftTests/Pods-eventbriteSearcherSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C3D81291CDD1B0D00D92C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C3D812B1CDD5A6700D92C11 /* Utils+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utils+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		7C3D812D1CDD5ADF00D92C11 /* UIColor+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		7CF2DF261CDB97340085D331 /* eventbriteSearcherSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventbriteSearcherSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF2DF291CDB97340085D331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF2DF311CDB97340085D331 /* eventbriteSearcherSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eventbriteSearcherSwift.xcdatamodel; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				7CF2DF531CDBA4DC0085D331 /* Utils.swift */,
+				7C3D812D1CDD5ADF00D92C11 /* UIColor+App.swift */,
+				7C3D812B1CDD5A6700D92C11 /* Utils+ActivityIndicator.swift */,
 				7CF2DF551CDBA4F20085D331 /* LocationManager.swift */,
 			);
 			name = Utils;
@@ -426,9 +432,11 @@
 			files = (
 				7CF2DF5B1CDBA5420085D331 /* SearchResultDTO.swift in Sources */,
 				7CF2DF5D1CDBA5600085D331 /* EventsManager.swift in Sources */,
+				7C3D812C1CDD5A6700D92C11 /* Utils+ActivityIndicator.swift in Sources */,
 				7CF2DF601CDBA59B0085D331 /* SearchResultTableViewCell.swift in Sources */,
 				7CF2DF621CDBA5B20085D331 /* SearchViewController.swift in Sources */,
 				7CF2DF561CDBA4F20085D331 /* LocationManager.swift in Sources */,
+				7C3D812E1CDD5ADF00D92C11 /* UIColor+App.swift in Sources */,
 				7CF2DF321CDB97340085D331 /* eventbriteSearcherSwift.xcdatamodeld in Sources */,
 				7CF2DF641CDBA6530085D331 /* EventDetailViewController.swift in Sources */,
 				7CF2DF2A1CDB97340085D331 /* AppDelegate.swift in Sources */,

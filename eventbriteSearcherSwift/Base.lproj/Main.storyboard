@@ -128,10 +128,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oGk-sh-mUX">
-                                <rect key="frame" x="282" y="249" width="37" height="37"/>
-                                <color key="color" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,8 +137,6 @@
                             <constraint firstItem="Oje-mw-974" firstAttribute="leading" secondItem="ogL-0t-x2h" secondAttribute="leading" id="fon-ZJ-0QE"/>
                             <constraint firstItem="Oje-mw-974" firstAttribute="top" secondItem="e6H-Nn-mYa" secondAttribute="bottom" id="mjR-hd-dpl"/>
                             <constraint firstItem="M61-Ub-6MX" firstAttribute="top" secondItem="Oje-mw-974" secondAttribute="bottom" id="oIM-vw-RAa"/>
-                            <constraint firstItem="oGk-sh-mUX" firstAttribute="centerY" secondItem="ogL-0t-x2h" secondAttribute="centerY" id="qi0-nf-O2k"/>
-                            <constraint firstItem="oGk-sh-mUX" firstAttribute="centerX" secondItem="ogL-0t-x2h" secondAttribute="centerX" id="rkG-Y9-ohc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xc7-hx-Kgr" secondAttribute="trailing" constant="16" id="rkx-bu-pjm"/>
                         </constraints>
                     </view>
@@ -167,7 +161,6 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="oGk-sh-mUX" id="OKp-ds-tzb"/>
                         <outlet property="noItemsLabel" destination="Xc7-hx-Kgr" id="ejC-37-yPH"/>
                         <outlet property="searchControl" destination="WFd-wH-qje" id="YcX-Fd-hkg"/>
                         <outlet property="tableView" destination="Oje-mw-974" id="MN7-9Z-mJz"/>
